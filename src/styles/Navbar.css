@@ -1,0 +1,8 @@
+.navbar-light .nav-link.active {
+    border-bottom: 2px solid #0bd16e !important; /* Underline color */
+}
+
+.nav-link.active {
+    color: rgb(31, 219, 87) !important;
+    border-bottom: 2px solid rgb(31, 219, 87) !important;
+}

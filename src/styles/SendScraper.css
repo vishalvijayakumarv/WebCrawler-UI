@@ -1,0 +1,60 @@
+.SendScraperWrapper {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    height: 30%;
+    position: relative; /* Add this line */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.inputField {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.actionRow {
+    display: flex;
+    justify-content: flex-end; /* Change this line */
+    align-items: center;
+    position: absolute; /* Add this line */
+    bottom: 20px; /* Add this line */
+    right: 20px; /* Add this line */
+}
+
+.amountDisplay {
+    color: #1e3c72;
+    font-weight: bold;
+}
+
+.sendButton {
+    background-color: #1e3c72;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 24px;
+    margin-top: 0px;
+    margin-bottom: -08px;
+}
+
+.sendButton:hover {
+    background-color: #15315b;
+}

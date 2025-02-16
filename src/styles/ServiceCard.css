@@ -1,0 +1,67 @@
+.servicesWrapper {
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.servicesHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.addServiceButton {
+    background-color: #1e3c72;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addServiceButton:hover {
+    background-color: #15315b;
+}
+
+.serviceCardsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 104%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.serviceCard {
+    background: linear-gradient(135deg, rgba(85, 102, 255, 0.9), rgba(180, 99, 255, 0.9));
+    border-radius: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    width: 350px;
+    height: 170px;
+    color: #fff;
+    font-weight: lighter;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: center;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+                z-index 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.serviceCardHover:hover {
+    transform: scale(1.05);
+}

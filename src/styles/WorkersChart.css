@@ -1,0 +1,35 @@
+.expenses-chart {
+    position: relative;
+}
+
+.workers-chart {
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.chart-container {
+    position: relative;
+    height: 240px; /* Reduced to 80% of 300px */
+    width: 80%; /* Set width to 80% */
+    margin: 0 auto; /* Center the chart container */
+}
+
+.chart-canvas {
+    box-sizing: border-box;
+    display: block;
+    height: 184px; /* Reduced to 80% of 230px */
+    width: 560px; /* Reduced to 80% of 700px */
+}
+
+.chart-legend {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nav-pills .nav-link {
+    cursor: pointer;
+}

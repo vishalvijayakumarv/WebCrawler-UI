@@ -1,0 +1,82 @@
+.transaction-item {
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+    color: rgb(62, 138, 238); /* Set text color to black */
+    width: 98%;
+    height: 50%;
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2ff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.transaction-amount.positive {
+    color: #2ecc71;
+}
+
+.transaction-amount.negative {
+    color: #e74c3c;
+}
+
+.container-list {
+    max-height: 300px;
+    min-height: 300px; /* Set a minimum height */
+    overflow-y: auto;
+}
+
+.container-details {
+    display: flex;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(68, 109, 245, 0.1);
+}
+
+.nav-pills .nav-link {
+    cursor: pointer;
+    color: black; /* Set text color to black */
+    border-bottom : 2px solid rgb(255, 255, 255) !important; /* Set active tab border color to red */
+}
+
+.nav-pills .nav-link.active {
+    background-color: rgb(20, 75, 194) !important; /* Set active tab color to red */
+    color: rgb(235, 241, 235) !important; /* Ensure active tab text color is green */
+    border-bottom : 2px solid rgb(255, 255, 255) !important; /* Set active tab border color to red */
+}
+
+.containersWrapper {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 0px auto;
+    
+}
+
+.containersHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px !important;
+    padding: 9px;
+    background-color: #ffffff;
+}
+
+.addContainerButton {
+    background-color: #1e3c72;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addContainerButton:hover {
+    background-color: #15315b;
+}
