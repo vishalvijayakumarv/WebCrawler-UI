@@ -47,7 +47,7 @@ const WorkersChart = () => {
   }, [runningCount, completedCount, exitedCount]);
 
   return (
-    <div className="workers-chart bg-white rounded-3 p-4 mb-4">
+    <div className="workers-chart">
       <h5 className="mb-4">Worker Containers</h5>
       <div className="chart-container">
         <canvas id="donutChart" ref={chartRef} className="chart-canvas"></canvas>

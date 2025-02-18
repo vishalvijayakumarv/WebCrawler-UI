@@ -29,6 +29,8 @@
     max-height: 300px;
     min-height: 300px; /* Set a minimum height */
     overflow-y: auto;
+    margin-left: 0; /* Ensure no left margin */
+    padding: 10px; /* Add padding if needed */
 }
 
 .container-details {
@@ -50,11 +52,12 @@
 }
 
 .containersWrapper {
-    background-color: #ffffff;
+    background-color: var(--primary-color);
     border-radius: 15px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin: 0px auto;
+    margin-left: -300px;
     
 }
 

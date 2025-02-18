@@ -112,6 +112,8 @@ const ServiceCard = () => {
                                 transform: `translate(-50%, -50%) ${styleRest.transform}`,
                                 zIndex: styleRest.zIndex,
                                 opacity: styleRest.opacity,
+                                backgroundColor: 'var(--bg-color)',
+                                color: 'var(--text-color)',
                             }}
                             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                         >

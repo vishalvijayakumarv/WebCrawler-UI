@@ -7,6 +7,8 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     margin: 0 auto;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .chart-container {

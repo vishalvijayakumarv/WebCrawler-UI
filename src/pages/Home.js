@@ -7,13 +7,13 @@ import ContainersList from '../components/ContainersList';
 const Home = () => {
     return (
         <div className="row">
-            <div className="col-md-5">
-                <ServiceCard />
-                <WorkersChart />
-            </div>
             <div className="col-md-7">
-                <SendScraper />
                 <ContainersList />
+                <SendScraper />
+            </div>
+            <div className="col-md-5">
+                <WorkersChart />
+                <ServiceCard />
             </div>
         </div>
     );

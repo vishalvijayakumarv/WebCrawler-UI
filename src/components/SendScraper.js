@@ -19,7 +19,7 @@ const SendScraper = () => {
     };
 
     return (
-        <div className="SendScraperWrapper">
+        <div className="SendScraperWrapper" style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }}>
             <h5 className="header">Send To Scraper</h5>
             <div className="formGroup">
                 <input

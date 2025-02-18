@@ -216,3 +216,16 @@ body.dark-theme {
     padding: 20px;
     width: calc(100% - 200px);
 }
+
+:root {
+    --primary-color: #1f73e0;
+    --bg-gradient: linear-gradient(135deg, #f5f7ff 0%, #f0f2ff 100%);
+    --text-color: #333;
+    --bg-color: #fff;
+}
+
+body.dark-theme {
+    --bg-gradient: linear-gradient(135deg, #2c3e50 0%, #4a4a4a 100%);
+    --text-color: #f5f5f5;
+    --bg-color: #333;
+} 
