@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFeather, faBell, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import { useLocation } from 'react-router-dom';
+import { faFeather, faBell, faSignOutAlt, faHome, faConciergeBell, faCog } from '@fortawesome/free-solid-svg-icons';
+import { useLocation, Link } from 'react-router-dom';
 import notificationsData from '../data/notifications.json'; // Import notifications
 
 const NavigationBar = () => {
@@ -57,8 +57,18 @@ const NavigationBar = () => {
                     AI WebCrawler
                 </Navbar.Brand>
                 <Nav className="mx-auto">
-                    <button onClick={() => openExternalLink('/svc/redisinsights')} className="btn btn-link px-3">Redisinsights</button>
-                    <button onClick={() => openExternalLink('/svc/kibana')} className="btn btn-link px-3">Kibana</button>
+                    <Link to="/" className="nav-link">
+                        <FontAwesomeIcon icon={faHome} className="me-2" />
+                        Home
+                    </Link>
+                    <Link to="/add-job" className="nav-link">
+                        <FontAwesomeIcon icon={faConciergeBell} className="me-2" />
+                        Add Job
+                    </Link>
+                    <Link to="/settings" className="nav-link">
+                        <FontAwesomeIcon icon={faCog} className="me-2" />
+                        Settings
+                    </Link>
                 </Nav>
                 <div className="d-flex align-items-center position-relative">
                     <div className="theme-toggle-wrapper me-4">

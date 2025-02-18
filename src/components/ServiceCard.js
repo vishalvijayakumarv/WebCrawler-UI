@@ -89,7 +89,7 @@ const ServiceCard = () => {
         <div className="servicesWrapper">
             <div className="servicesHeader">
                 <h2>Services ({services.length})</h2>
-                <button className="addServiceButton">Refresh</button>
+                {/* <button className="addServiceButton">Refresh</button> */}
             </div>
             <div 
                 className="serviceCardsContainer"
