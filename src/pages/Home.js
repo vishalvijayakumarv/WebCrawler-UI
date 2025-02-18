@@ -2,7 +2,7 @@ import React from 'react';
 import ServiceCard from '../components/ServiceCard';
 import WorkersChart from '../components/WorkersChart';
 import ContainersList from '../components/ContainersList';
-
+import SendScraper from '../components/SendScraper';
 const Home = () => {
     return (
         <div className="row">
@@ -10,9 +10,10 @@ const Home = () => {
                 <ContainersList />
             </div>
             <div className="col-md-5">
+                <SendScraper />
                 
-                <WorkersChart />
                 <ServiceCard />
+                <WorkersChart />
             </div>
         </div>
     );

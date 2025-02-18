@@ -1,14 +1,11 @@
 .SendScraperWrapper {
-    background-color: var(--bg-color);
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin: 20px auto;
-    width: 100%;
+    padding: 13px;
+    width: 86%;
     height: 25%;
-    position: relative; /* Add this line */
-    margin-left: 0; /* Ensure no left margin */
-    margin-top: 0px;
+    position: relative;
+    margin-left: 319px;
 }
 
 .header {
@@ -26,10 +23,10 @@
 .inputField {
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 27px;
+    font-size: 13px;
     background-color: var(--bg-color);
-    color: var(--text-color)
+    color: var(--text-color);
 }
 
 .actionRow {
@@ -53,10 +50,11 @@
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-right: 14px;
-    margin-top: 0px;
-    margin-bottom: -08px;
+    margin-right: 6px;
+    margin-top: -68px;
+    margin-bottom: -52px;
+    height: 37px;
+    width: 75px;
 }
 
 .sendButton:hover {

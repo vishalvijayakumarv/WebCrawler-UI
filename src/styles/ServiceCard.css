@@ -1,16 +1,15 @@
 .servicesWrapper {
     background-color: var(--bg-color);
     border-radius: 15px;
-    margin: 20px auto;
     padding: 20px;
-    width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    margin-left: 0px;
-    display: flex;
+    margin-top: 10px;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    width: 454px;
+    height: 331px;
+    margin-left: 323px;
+    margin-bottom: 0px;
 }
 
 .servicesHeader {
@@ -18,6 +17,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    height: 15px;
 }
 
 .addServiceButton {
@@ -43,7 +43,7 @@
     overflow: hidden;
     position: relative;
     background-color: var(--bg-color);
-    margin-top: 20px;
+    margin-top: -10px;
     margin-bottom: 20px;
 }
 
