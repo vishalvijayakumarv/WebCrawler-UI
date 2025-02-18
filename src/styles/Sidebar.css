@@ -1,46 +1,98 @@
 .sidebar {
     position: fixed;
-    top: 0;
-    left: -200px; /* Hidden by default */
-    width: 200px;
-    height: 100%;
-    background-color: var(--bg-color);
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s ease;
+    top: 50px; /* Adjust this to match the height of your navbar */
+    left: 50px; /* Always visible */
+    height: calc(100% - 50px); /* Subtract navbar height */
+    background-color: var(--bg-color); /* Ensure this is set for both themes */
+    box-shadow: none; /* Remove shadow */
+    transition: width 0.1s ease; /* Keep this for width transition */
     z-index: 1000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
 }
 
-.sidebar:hover {
-    left: 0; /* Show on hover */
+.sidebar.collapsed {
+    width: 70px; /* Width when collapsed */
 }
 
-.sidebar-list {
+.sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.sidebar-item {
-    margin: 20px 0;
+.sidebar li {
+    margin: 10px 0;
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Center items vertically */
 }
 
-.sidebar-link {
+.sidebar a {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px;
     color: var(--text-color);
     text-decoration: none;
     transition: background-color 0.3s;
+    border-radius: 5px;
+    width: 100%; /* Make link fill the list item */
 }
 
-.sidebar-link:hover {
+.sidebar a:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-icon {
-    margin-right: 10px;
+    margin-right: 10px; /* Space between icon and text */
+    opacity: 1; /* Ensure icons are fully visible */
 }
 
 .sidebar-text {
-    display: inline-block;
+    display: none; /* Hide text by default */
+}
+
+/* Show text when sidebar is visible */
+.sidebar:hover .sidebar-text {
+    display: inline; /* Show text when sidebar is visible */
+}
+
+.sidebar:hover .sidebar-icon {
+    opacity: 1; /* Show icons when sidebar is visible */
+}
+
+/* Dim icons when sidebar is hidden */
+.sidebar .sidebar-icon {
+    opacity: 0.5; /* Dim icons when sidebar is hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for icons */
+}
+
+/* Show icons when sidebar is partially hidden */
+.sidebar {
+    left: -10px; /* Adjusted to show only icons */
+}
+
+.sidebar:hover .sidebar-icon {
+    opacity: 1; /* Show icons when sidebar is visible */
+}
+
+.sidebar-footer {
+    margin-top: auto; /* Push the footer to the bottom */
+    padding: 10px 0; /* Add some padding */
+    border-top: 1px solid #e0e0e0; /* Optional: add a top border for separation */
+}
+
+.sidebar-footer .nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px; /* Reasonable padding */
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.1s;
+    border-radius: 5px;
+    width: 100%; /* Make link fill the footer item */
+}
+
+.sidebar-footer .nav-item:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Change background on hover */
 } 

@@ -43,7 +43,7 @@ body.dark-theme {
 
 .navbar-light {
     background-color: var(--bg-color) !important;
-    transition: background-color 0.5s;
+    transition: background-color 0.1s;
 }
 
 .theme-toggle-wrapper {
@@ -209,4 +209,10 @@ body.dark-theme {
     opacity: 0;
     transform: translateX(-100%);
     transition: opacity 300ms, transform 300ms;
+}
+
+.main-content {
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100% - 200px);
 }
