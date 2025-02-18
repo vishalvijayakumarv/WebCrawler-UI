@@ -60,7 +60,7 @@ const ContainersList = () => {
                 <div>
                     <input
                         type="text"
-                        className="inputField"
+                        className="ContainerListInputField"
                         placeholder="Search..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}

@@ -1,5 +1,13 @@
-.navbar-light .nav-link.active {
-    border-bottom: 2px solid #0bd16e !important; /* Underline color */
+.nav-link.active {
+    background-color: var(--bg-color) !important;
+    transition: background-color 0.1s !important; /* Smooth background color transition */
+    --bs-nav-link-color: var(--primary-colour) !important;
+    --bs-nav-link-hover-color: var(--highlight-colour) !important;
+    --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
+}
+.navbar-light {
+    background-color: var(--bg-color) !important;
+    border-bottom: 2px solid #0b39d1 !important; /* Underline color */
     transition: background-color 0.1s !important; /* Smooth background color transition */
     --bs-nav-link-color: var(--primary-colour) !important;
     --bs-nav-link-hover-color: var(--highlight-colour) !important;
@@ -12,22 +20,18 @@
     color: var(--highlight-colour) !important;
     border-bottom: 2px solid var(--highlight-colour);
 }
-
 .nav-link {
     color: #007bff;
     --bs-nav-link-color: var(--primary-colour) !important;
     --bs-nav-link-hover-color: var(--highlight-colour) !important;
 }
-
 .notification-icon {
     position: relative;
     transition: transform 0.2s ease;
 }
-
 .notification-icon:active {
     transform: scale(0.9);
 }
-
 .notification-count {
     position: absolute;
     top: 0;
@@ -45,7 +49,6 @@
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
 }
-
 .notifications-list {
     z-index: 1050; /* Ensure it appears above other components */
     max-height: 300px;
@@ -55,31 +58,26 @@
     flex-direction: column; /* Arrange items in a column */
     padding: 10px; /* Add some padding */
 }
-
 .notification-item {
     padding: 8px; /* Add padding for each notification item */
     border-bottom: 1px solid #e0e0e0; /* Optional: add a bottom border for separation */
     cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
     transition: background-color 0.1s; /* Smooth background color transition */
 }
-
 .notification-item:hover {
     background-color: #f0f0f0; /* Change background on hover for better visibility */
 }
-
 .notification-item:last-child {
     border-bottom: none; /* Remove border from the last item */
 }
-
 .mark-as-read {
-    position: absolute; /* Position it absolutely within the notifications list */
-    top: 10px; /* Adjust the top position */
-    right: 10px; /* Adjust the right position */
-    font-size: 0.75rem; /* Smaller font size */
-    padding: 0; /* Remove padding for a more compact look */
-    text-decoration: underline; /* Optional: underline to indicate it's a link */
-    background: none; /* Remove background */
-    border: none; /* Remove border */
-    color: #007bff; /* Bootstrap primary color or your preferred color */
+    position: absolute;
+    top: 2px;
+    right: 9px;
+    font-size: 0.75rem;
+    padding: 0;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    color: #007bff;
 }
-

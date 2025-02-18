@@ -1,11 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavigationBar from './components/Navbar';
+import SendScraper from './components/SendScraper';
 import Home from './pages/Home';
 import ServicesPage from './pages/Services';
-import SendScraper from './components/SendScraper';
 import SettingsPage from './pages/Settings';
-import './styles/App.css';
 
 function App() {
     return (

@@ -56,6 +56,14 @@
     border-bottom : 2px solid var(--bg-color) !important; /* Set active tab border color to red */
 }
 
+.ContainerListInputField {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 27px;
+    font-size: 13px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
 .containersWrapper {
     background-color: var(--primary-color);
     background: var(--bg-color);

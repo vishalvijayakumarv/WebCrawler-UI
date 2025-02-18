@@ -7,20 +7,7 @@
     position: relative;
     margin-left: 319px;
 }
-
-.header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.formGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.inputField {
+.SendScraperInputField {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 27px;
@@ -28,21 +15,6 @@
     background-color: var(--bg-color);
     color: var(--text-color);
 }
-
-.actionRow {
-    display: flex;
-    justify-content: flex-end; /* Change this line */
-    align-items: center;
-    position: absolute; /* Add this line */
-    bottom: 20px; /* Add this line */
-    right: 20px; /* Add this line */
-}
-
-.amountDisplay {
-    color: #1e3c72;
-    font-weight: bold;
-}
-
 .sendButton {
     background-color: var(--button-bg-color);
     color: var(--text-color);
@@ -56,7 +28,6 @@
     height: 37px;
     width: 75px;
 }
-
 .sendButton:hover {
     background-color: #15315b;
 }

@@ -54,7 +54,7 @@ const NavigationBar = () => {
             <div className="container">
                 <Navbar.Brand as="div" className="d-flex align-items-center">
                     <FontAwesomeIcon icon={faFeather} className="text-primary me-2" />
-                    AI WebCrawler
+                    WebCrawler
                 </Navbar.Brand>
                 <Nav className="mx-auto">
                     <Link to="/" className="nav-link">

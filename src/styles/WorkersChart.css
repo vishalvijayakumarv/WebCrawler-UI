@@ -1,7 +1,3 @@
-.expenses-chart {
-    position: relative;
-}
-
 .workers-chart {
     position: relative;
     border-radius: 34px;
@@ -19,14 +15,14 @@
     margin-bottom: -50px;
 }
 
-.chart-title {
+.worker-chart-title {
     margin-top: 50px;
-    margin-bottom: -15px; /* Add spacing below the title */
-    font-size: 1.25rem; /* Adjust font size as needed */
-    text-align: top; /* Center align the title */
+    margin-bottom: -15px; 
+    font-size: 1.25rem; 
+    text-align: top; 
 }
 
-.chart-container {
+.worker-chart-container {
     position: relative;
     height: 85%; 
     width: 95%; 
@@ -34,23 +30,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 20px 0;
 }   
 
-.chart-canvas {
+.worker-chart-canvas {
     box-sizing: border-box;
     display: block;
-    height: 100%; /* Adjust height as needed */
-    width: 100%; /* Adjust width as needed */
+    height: 100%; 
+    width: 100%; 
 }
 
-.chart-legend {
+.worker-chart-legend {
     display: flex;
     justify-content: center;
     gap: 10px;
+    /* gap: 20px; */
     margin-top: 27px;
+    /* margin-top: 20px; */
 }
 
-.nav-pills .nav-link {
-    cursor: pointer;
-}
+
 

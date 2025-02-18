@@ -48,11 +48,11 @@ const WorkersChart = () => {
 
   return (
     <div className="workers-chart">
-      <h5 className="chart-title">Worker Containers</h5>
-      <div className="chart-container">
-        <canvas id="donutChart" ref={chartRef} className="chart-canvas"></canvas>
+      <h5 className="worker-chart-title">Worker Containers</h5>
+      <div className="worker-chart-container">
+        <canvas id="donutChart" ref={chartRef} className="worker-chart-canvas"></canvas>
       </div>
-      <div className="chart-legend">
+      <div className="worker-chart-legend">
         <div className="legend-item">
           {/* <div className="legend-color" style={{ backgroundColor: '#36A2EB' }}></div> */}
           {/* Running */}

@@ -1,12 +1,5 @@
-:root {
-    --primary-color: #000000;
-    --bg-gradient: linear-gradient(135deg, #f5f7ff 0%, #f0f2ff 100%);
-}
 
-body {
-    background: var(--bg-gradient);
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-}
+
 
 .navbar-brand img {
     width: 30px;
@@ -55,10 +48,8 @@ body {
     padding: 20px;
 }
 
-.expenses-chart {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
+.nav-pills .nav-link {
+    cursor: pointer;
 }
 
 .nav-link.active {

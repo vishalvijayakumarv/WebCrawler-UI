@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import '../styles/SendScraper.css';
 
 const SendScraper = () => {
-    const [amount, setAmount] = useState('Job-Name');
-    const [recipient, setRecipient] = useState('http://www/example.com');
+    const [Job, setJob] = useState('');
+    const [recipient, setRecipient] = useState('');
 
-    const handleAmountChange = (e) => {
-        setAmount(e.target.value);
+    const handleJobChange = (e) => {
+        setJob(e.target.value);
     };
 
     const handleRecipientChange = (e) => {
         setRecipient(e.target.value);
     };
 
-    const handleSendMoney = () => {
-        // Logic to send money goes here
-        alert(`Sending ${amount} to ${recipient}`);
+    const handleSendurl = () => {
+        // Logic to send url goes here
+        alert(`Sending ${Job} to ${recipient}`);
     };
 
     return (
@@ -24,21 +24,21 @@ const SendScraper = () => {
             <div className="formGroup">
                 <input
                     type="text"
-                    className="inputField"
-                    placeholder="Amount"
-                    value={amount}
-                    onChange={handleAmountChange}
+                    className="SendScraperInputField"
+                    placeholder="JobName"
+                    value={Job}
+                    onChange={handleJobChange}
                 />
                 <input
                     type="text"
-                    className="inputField"
-                    placeholder="Recipient account number"
+                    className="SendScraperInputField"
+                    placeholder="Website URL"
                     value={recipient}
                     onChange={handleRecipientChange}
                 />
             </div>
             <div className="actionRow">
-                <button className="sendButton" onClick={handleSendMoney}>
+                <button className="sendButton" onClick={handleSendurl}>
                     Send
                 </button>
             </div>
