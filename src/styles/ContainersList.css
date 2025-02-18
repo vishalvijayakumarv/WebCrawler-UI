@@ -1,7 +1,7 @@
 .transaction-item {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--bg-color);
     padding: 12px 0;
-    color: rgb(62, 138, 238); /* Set text color to black */
+    color: rgb(40, 132, 236); /* Set text color to black */
     width: 98%;
     height: 50%;
 }
@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f0f2ff;
+    background: var(--bg-color);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
@@ -26,33 +26,37 @@
 }
 
 .container-list {
-    max-height: 300px;
-    min-height: 300px; /* Set a minimum height */
+    max-height: 600px;
+    min-height: 600px; /* Set a minimum height */
     overflow-y: auto;
     margin-left: 0; /* Ensure no left margin */
     padding: 10px; /* Add padding if needed */
+    background: var(--bg-color);
+    color: var(--text-color);
 }
 
 .container-details {
     display: flex;
     gap: 10px;
-    box-shadow: 0 4px 8px rgba(68, 109, 245, 0.1);
+    background-color: var(--bg-color);
 }
 
 .nav-pills .nav-link {
+    background-color: var(--bg-color);
     cursor: pointer;
-    color: black; /* Set text color to black */
-    border-bottom : 2px solid rgb(255, 255, 255) !important; /* Set active tab border color to red */
+    color: var(--text-color); /* Set text color to black */
+    border-bottom : 2px solid var(--bg-color) !important; /* Set active tab border color to red */
 }
 
 .nav-pills .nav-link.active {
-    background-color: rgb(20, 75, 194) !important; /* Set active tab color to red */
-    color: rgb(235, 241, 235) !important; /* Ensure active tab text color is green */
-    border-bottom : 2px solid rgb(255, 255, 255) !important; /* Set active tab border color to red */
+    background-color: var(--button-bg-color) !important; /* Set active tab color to red */
+    color: var(--text-color) !important; /* Ensure active tab text color is green */
+    border-bottom : 2px solid var(--bg-color) !important; /* Set active tab border color to red */
 }
 
 .containersWrapper {
     background-color: var(--primary-color);
+    background: var(--bg-color);
     border-radius: 15px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -67,19 +71,9 @@
     align-items: center;
     margin-bottom: 20px !important;
     padding: 9px;
-    background-color: #ffffff;
+    background-color: var(--bg-color);
 }
 
-.addContainerButton {
-    background-color: #1e3c72;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.addContainerButton:hover {
-    background-color: #15315b;
+.text-muted {
+    color: var(--text-color) !important;
 }

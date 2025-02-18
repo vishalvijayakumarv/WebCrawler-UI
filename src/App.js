@@ -4,8 +4,9 @@ import NavigationBar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
 import ServicesPage from './pages/Services';
+import SendScraper from './components/SendScraper';
 import SettingsPage from './pages/Settings';
-import './App.css';
+import './styles/App.css';
 
 function App() {
     return (
@@ -16,7 +17,7 @@ function App() {
                 <div className="main-content">
                     <div className="container py-4">
                         <Routes>
-                            <Route path="/services" element={<ServicesPage />} />
+                            <Route path="/add-job" element={<SendScraper />} />
                             <Route path="/settings" element={<SettingsPage />} />
                             <Route path="/" element={<Home />} />
                         </Routes>

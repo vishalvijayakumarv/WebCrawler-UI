@@ -30,9 +30,9 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/services">
+                    <Link to="/add-job">
                         <FontAwesomeIcon icon={faConciergeBell} size={isCollapsed ? 16 : 20} />
-                        <span style={{ display: isCollapsed ? 'none' : 'inline' }}>Services</span>
+                        <span style={{ display: isCollapsed ? 'none' : 'inline' }}>Add Job</span>
                     </Link>
                 </li>
             </ul>

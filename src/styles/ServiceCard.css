@@ -1,12 +1,16 @@
 .servicesWrapper {
-    background-color: #ffffff;
+    background-color: var(--bg-color);
     border-radius: 15px;
     margin: 20px auto;
     padding: 20px;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 0px;
+    margin-top: 20px;
     margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .servicesHeader {
@@ -17,8 +21,8 @@
 }
 
 .addServiceButton {
-    background-color: #1e3c72;
-    color: #fff;
+    background-color: var(--button-bg-color);
+    color: var(--text-color);
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
@@ -34,11 +38,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 104%;
-    height: 250px;
+    width: 100%;
+    height: auto;
     overflow: hidden;
     position: relative;
-    background-color: white;
+    background-color: var(--bg-color);
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -52,9 +56,10 @@
     height: 170px;
     color: #fff;
     font-weight: lighter;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     scroll-snap-align: center;
     transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
                 z-index 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);

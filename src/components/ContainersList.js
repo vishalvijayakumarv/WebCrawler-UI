@@ -54,13 +54,13 @@ const ContainersList = () => {
     };
 
     return (
-        <div className="bg-white rounded-3 p-4 mb-4 containersWrapper">
+        <div className="rounded-3 p-4 mb-4 containersWrapper">
             <div className="d-flex justify-content-between align-items-center mb-4 containersHeader">
                 <h5 className="mb-0">{getTabLabel()}</h5>
                 <div>
                     <input
                         type="text"
-                        className="form-control d-inline-block w-auto"
+                        className="inputField"
                         placeholder="Search..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}

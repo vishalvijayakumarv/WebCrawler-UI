@@ -4,25 +4,45 @@
 
 .workers-chart {
     position: relative;
+    border-radius: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 45%; /* Adjust height as needed */
     width: 100%;
+    padding: 5px;
     margin: 0 auto;
     background-color: var(--bg-color);
     color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-title {
+    margin-top: 50px;
+    margin-bottom: -15px; /* Add spacing below the title */
+    font-size: 1.25rem; /* Adjust font size as needed */
+    text-align: top; /* Center align the title */
 }
 
 .chart-container {
     position: relative;
-    height: 240px; /* Reduced to 80% of 300px */
-    width: 80%; /* Set width to 80% */
-    margin: 0 auto; /* Center the chart container */
-}
+    height: 85%; /* Adjust height as needed */
+    width: 95%; /* Set width to 75% */
+    padding: 5px; /* Add padding */
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
 
 .chart-canvas {
     box-sizing: border-box;
     display: block;
-    height: 184px; /* Reduced to 80% of 230px */
-    width: 560px; /* Reduced to 80% of 700px */
+    height: 100%; /* Adjust height as needed */
+    width: 100%; /* Adjust width as needed */
+    
+
 }
 
 .chart-legend {
