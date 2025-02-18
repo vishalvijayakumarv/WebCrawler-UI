@@ -3,11 +3,11 @@ import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFeather, faBell, faSignOutAlt, faHome, faConciergeBell, faCog } from '@fortawesome/free-solid-svg-icons';
-import { useLocation, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import notificationsData from '../data/notifications.json'; // Import notifications
 
 const NavigationBar = () => {
-    const location = useLocation();
+    
     const [isDarkTheme, setIsDarkTheme] = useState(false);
     const [notifications, setNotifications] = useState([]);
     const [showNotifications, setShowNotifications] = useState(false);
@@ -90,7 +90,7 @@ const NavigationBar = () => {
                         )}
                     </div>
                     {showNotifications && (
-                        <div className="notifications-list position-absolute bg-white shadow p-3" style={{ right: 0, top: '100%', zIndex: 1050 }}>
+                        <div className="notifications-list position-absolute shadow p-3" style={{ right: 0, top: '100%', zIndex: 1050 }}>
                             <button onClick={markAsRead} className="btn btn-link mark-as-read">Mark all as read</button>
                             {notifications.length > 0 ? (
                                 notifications.map(notification => (

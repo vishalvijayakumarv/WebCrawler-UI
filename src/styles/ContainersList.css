@@ -1,4 +1,4 @@
-.transaction-item {
+.containerlist-item {
     border-bottom: 1px solid var(--bg-color);
     padding: 12px 0;
     color: rgb(40, 132, 236); /* Set text color to black */
@@ -6,7 +6,7 @@
     height: 50%;
 }
 
-.transaction-icon {
+.containerlist-icon {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -35,6 +35,19 @@
     color: var(--text-color);
     z-index: 10;
     position: relative;
+}
+.containerlist-item {
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+}
+.containerlist-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
 }
 
 .container-details {

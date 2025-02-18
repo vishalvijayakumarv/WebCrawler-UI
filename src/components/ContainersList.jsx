@@ -84,11 +84,11 @@ const ContainersList = () => {
                 {filteredContainers.slice(0, visibleContainers).map((container, index) => (
                     <div
                         key={container.id}
-                        className="transaction-item d-flex align-items-center justify-content-between"
+                        className="containerlist-item d-flex align-items-center justify-content-between"
                         ref={index === visibleContainers - 1 ? lastContainerRef : null}
                     >
                         <div className="d-flex align-items-center">
-                            <div className="transaction-icon me-3">
+                            <div className="containerlist-icon me-3">
                                 <FontAwesomeIcon icon={faDocker} size="2x" />
                             </div>
                             <div>

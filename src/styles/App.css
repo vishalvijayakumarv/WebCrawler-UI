@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #000000;
+    --primary-color: rgba(0, 0, 0, 0.986);
     --bg-gradient: linear-gradient(135deg, #f5f7ff 0%, #f0f2ff 100%);
     --text-color: #333;
-    --bg-color: #fff;
+    --bg-color: #ffffff;
     --button-bg-color: #1f73e0;
     --highlight-colour : blue;
 }
@@ -18,9 +18,9 @@ body {
 body.dark-theme {
     --bg-gradient: linear-gradient(135deg, #2c3e50 0%, #4a4a4a 100%);
     --text-color: #f5f5f5;
-    --bg-color: #333;
+    --bg-color: #3c3c3c;
     --button-bg-color : #1f73e0;
-    --highlight-colour : white;
+    --highlight-colour : rgb(25, 77, 221);
 }
 
 .app-container {
@@ -97,34 +97,12 @@ body.dark-theme {
     width: 30px;
     height: auto;
 }
-
-.credit-card {
-    background: var(--primary-color);
-    border-radius: 15px;
-    padding: 20px;
-    color: white;
-    min-height: 200px;
-    position: relative;
-    overflow: hidden;
-}
-
-.credit-card::before {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 100%;
-    background: rgba(255,255,255,0.1);
-    top: -150px;
-    right: -150px;
-}
-
-.transaction-item {
+.containerlist-item {
     border-bottom: 1px solid #eee;
     padding: 12px 0;
 }
 
-.transaction-icon {
+.containerlist-icon {
     width: 40px;
     height: 40px;
     border-radius: 50%;

@@ -1,30 +1,35 @@
-.nav-link.active {
+.navbar-light {
     background-color: var(--bg-color) !important;
-    transition: background-color 0.1s !important; /* Smooth background color transition */
+    border-bottom: 2px solid var(--highlight-colour) !important; /* Navbar Underline color */
+    transition: background-color 0.1s !important;  
     --bs-nav-link-color: var(--primary-colour) !important;
+    --bs-navbar-brand-color: var(--primary-colour) !important;
     --bs-nav-link-hover-color: var(--highlight-colour) !important;
     --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
 }
-.navbar-light {
-    background-color: var(--bg-color) !important;
-    border-bottom: 2px solid #0b39d1 !important; /* Underline color */
-    transition: background-color 0.1s !important; /* Smooth background color transition */
+.navbar-brand img {
+    width: 30px;
+    height: auto;
+}
+.nav-link {
+    color: var(--primary-colour) !important;
     --bs-nav-link-color: var(--primary-colour) !important;
+    --bs-nav-link-hover-color: var(--highlight-colour) !important;
+}
+.nav-link.active {
+    background-color: var(--bg-color) !important;
+    transition: background-color 0.1s !important; 
+    color: var(--highlight-colour) !important;
+    border-bottom: 2px solid var(--highlight-colour);
+    --bs-nav-link-color: var(--primary-colour) !important;
+    --bs-navbar-brand-color: var(--primary-colour) !important;
     --bs-nav-link-hover-color: var(--highlight-colour) !important;
     --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
 }
 .nav-link:focus, .nav-link:hover {
     color: var(--highlight-colour) !important;
 }
-.nav-link.active {
-    color: var(--highlight-colour) !important;
-    border-bottom: 2px solid var(--highlight-colour);
-}
-.nav-link {
-    color: #007bff;
-    --bs-nav-link-color: var(--primary-colour) !important;
-    --bs-nav-link-hover-color: var(--highlight-colour) !important;
-}
+
 .notification-icon {
     position: relative;
     transition: transform 0.2s ease;
@@ -40,7 +45,7 @@
     font-size: 0.75rem;
     padding: 0.25em 0.5em; /* Padding for better appearance */
     background-color: #dc3545; /* Bootstrap's bg-danger color */
-    color: white; /* Text color */
+    color: var(--bg-color); /* Text color */
     border-radius: 50px; /* Rounded pill effect */
     z-index: 1051;
     min-width: 18px; /* Minimum width */
@@ -57,15 +62,16 @@
     display: flex; /* Use flexbox */
     flex-direction: column; /* Arrange items in a column */
     padding: 10px; /* Add some padding */
+    background: var(--bg-color);
 }
 .notification-item {
     padding: 8px; /* Add padding for each notification item */
-    border-bottom: 1px solid #e0e0e0; /* Optional: add a bottom border for separation */
+    border-bottom: 1px solid var(--bg-color); /* Optional: add a bottom border for separation */
     cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
     transition: background-color 0.1s; /* Smooth background color transition */
 }
 .notification-item:hover {
-    background-color: #f0f0f0; /* Change background on hover for better visibility */
+    background-color: var(--bg-color); /* Change background on hover for better visibility */
 }
 .notification-item:last-child {
     border-bottom: none; /* Remove border from the last item */
@@ -79,5 +85,5 @@
     text-decoration: underline;
     background: none;
     border: none;
-    color: #007bff;
+    color: rgb(0, 162, 255);
 }
