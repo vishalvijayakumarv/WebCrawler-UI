@@ -20,6 +20,16 @@ const ServiceCard = () => {
                 ['#3a1c71', '#d76d77'], // Dark Purple to Pink                  | selected
                 ['#000428', '#004e92'], // Midnight Blue to Deep Sky Blue       | selected 
                 ['#1a2a6c', '#b21f1f'], // Deep Indigo to Dark Red              | selected 
+                ['#232526', '#414345'], // Obsidian Black to Dark Gold
+                ['#141E30', '#243B55'], // Charcoal Grey to Electric Blue
+                ['#200122', '#6f0000'], // Deep Violet to Blood Red
+                ['#000000', '#0f9b0f'], // Black Pearl to Neon Blue
+                ['#00203F', '#00A99D'], // Dark Sapphire to Emerald Green
+                ['#232526', '#ff7300'], // Shadow Black to Fire Orange
+                ['#1F1C2C', '#928DAB'], // Gunmetal Grey to Electric Purple
+                ['#2C3E50', '#FD746C'], // Twilight Blue to Magenta
+                ['#434343', '#1c92d2']  // Graphite Black to Royal Blue
+                // ['#09203f', '#537895'], // Deep Teal to Dark Cyan
                 // ['#232526', '#414345'], // Dark Gray to Charcoal
                 // ['#16222a', '#3a6073'], // Deep Teal to Steel Blue
                 // ['#1c1c1c', '#4b4b4b'], // Almost Black to Dark Gray
@@ -118,7 +128,7 @@ const ServiceCard = () => {
                             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                         >
                             <div className="card-content">
-                                <h4 className="text-white">{service.name}</h4>
+                                <h4 className="text">{service.name}</h4>
                                 <p>Status: {service.status}</p>
                                 <p>Version: {service.version}</p>
                                 <p>Uptime: {service.uptime}</p>

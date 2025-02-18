@@ -46,7 +46,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f0f2ff;
+    background: var(--bg-color);
 }
 
 .quick-transaction {
@@ -93,4 +93,18 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
+}
+
+.services-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.settings-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

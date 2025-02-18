@@ -134,7 +134,7 @@ body.dark-theme {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f0f2ff;
+    background: var(--bg-color);
 }
 
 .quick-transaction {
