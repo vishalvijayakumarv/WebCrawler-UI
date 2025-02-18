@@ -62,7 +62,7 @@ body {
 }
 
 .nav-link.active {
-    color: var(--primary-color) !important;
+    color: var(--highlight-colour) !important;
     border-bottom: 2px solid var(--primary-color);
 }
 
