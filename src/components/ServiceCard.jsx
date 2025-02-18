@@ -84,15 +84,24 @@ const ServiceCard = () => {
         e.preventDefault();
         if (wheelThrottleRef.current) return; // throttle check
         wheelThrottleRef.current = true;
+
         setCardOrder(prevOrder => {
             const newOrder = [...prevOrder];
-            const first = newOrder.shift();
-            newOrder.push(first);
+            if (e.deltaY > 0) {
+                // Scroll down
+                const first = newOrder.shift();
+                newOrder.push(first);
+            } else {
+                // Scroll up
+                const last = newOrder.pop();
+                newOrder.unshift(last);
+            }
             return newOrder;
         });
+
         setTimeout(() => {
             wheelThrottleRef.current = false;
-        }, 200); // adjust delay as needed
+        }, 100); // adjust delay as needed
     };
 
     return (

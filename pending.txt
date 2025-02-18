@@ -1,0 +1,20 @@
+Navbar 
+
+Add Job  into Status
+Add redis insights icon + link ( open in new tab ) 
+Add kibana icon + link ( open in new tab ) 
+make text & icon colour change based on theme
+------------------------------------------------------------------------------------------------------------------------------
+
+Send To Scraper 
+Make the text field value proper with example.com
+------------------------------------------------------------------------------------------------------------------------------
+
+Worker containers 
+
+Make the chart outline change based on theme 
+Make the chart text based on theme 
+------------------------------------------------------------------------------------------------------------------------------
+
+Add status demo page with status table / cards with detailes 
+------------------------------------------------------------------------------------------------------------------------------

@@ -61,8 +61,8 @@
     justify-content: center;
     align-items: center;
     scroll-snap-align: center;
-    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
-                z-index 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+                z-index 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     margin-top: 40px;
     margin-bottom: 30px;
     --text-color: white;
