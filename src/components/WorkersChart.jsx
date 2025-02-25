@@ -1,15 +1,36 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Chart, DoughnutController, ArcElement, Tooltip, Legend } from 'chart.js';
-import containersData from '../data/containers.json';
 import '../styles/WorkersChart.css';
+import { API_ENDPOINTS } from "../utils/api";
 
 Chart.register(DoughnutController, ArcElement, Tooltip, Legend);
 
 const WorkersChart = () => {
   const chartRef = useRef(null);
   const chartInstanceRef = useRef(null);
+  const [containers, setContainers] = useState([]);
 
-  const containers = containersData.containers;
+  const fetchContainers = async () => {
+    try {
+      const response = await fetch(API_ENDPOINTS.LIST_CONTAINERS);
+      if (!response.ok) {
+        throw new Error('Failed to fetch containers');
+      }
+      const data = await response.json();
+      setContainers(data.containers || []); // Ensure containers is an array
+    } catch (error) {
+      console.error('Error fetching containers:', error);
+      setContainers([]); // Set containers to an empty array on error
+    }
+  };
+
+  useEffect(() => {
+    fetchContainers(); // Fetch containers on component mount
+
+    const intervalId = setInterval(fetchContainers, 300000); // Fetch data every 5 minutes (300000 ms)
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, []);
 
   const runningCount = containers.filter(container => container.status === 'Running').length;
   const completedCount = containers.filter(container => container.status === 'Completed').length;

@@ -1,10 +1,10 @@
-export const fetchData = async (url) => {
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        throw error;
-    }
+
+const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+
+export const API_ENDPOINTS = {
+  LIST_CONTAINERS: `${API_BASE_URL}/api/list-containers`,
+  LIST_SERVICES: `${API_BASE_URL}/api/list-services`,
+  NOTIFICATION: `${API_BASE_URL}/api/notification`,
+  SEND_SCRAPER: `${API_BASE_URL}/api/send-scraper`,
+  START_CONTAINER: `${API_BASE_URL}/api/start-container`,
 };

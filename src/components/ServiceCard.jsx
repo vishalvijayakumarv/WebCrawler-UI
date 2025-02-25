@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import ServiceData from '../data/services.json';
 import '../styles/ServiceCard.css';
-
+import { API_ENDPOINTS } from "../utils/api";
 const ServiceCard = () => {
     const [services, setServices] = useState([]);
     const [gradients, setGradients] = useState([]);
@@ -10,16 +9,37 @@ const ServiceCard = () => {
     const containerRef = useRef(null);
     const wheelThrottleRef = useRef(false); // added throttle ref
 
-    useEffect(() => {
-        setServices(ServiceData.services);
+    const fetchServices = async () => {
+        try {
+            // const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/list-services`);
+            const response = await fetch(API_ENDPOINTS.LIST_SERVICES);
+            if (!response.ok) {
+                throw new Error('Failed to fetch services');
+            }
+            const data = await response.json();
+            setServices(data.services || []); // Ensure services is an array
+        } catch (error) {
+            console.error(error);
+            setServices([]); // Set services to an empty array on error
+        }
+    };
 
+    useEffect(() => {
+        fetchServices(); // Fetch services on component mount
+
+        const intervalId = setInterval(fetchServices, 300000); // Fetch data every 5 minutes (300000 ms)
+
+        return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    }, []);
+
+    useEffect(() => {
         const generateGradients = () => {
             const colors = [
-                ['#0f0c29', '#302b63'], // Deep Blue to Purple                  | selected
-                ['#1e3c72', '#2a5298'], // Navy Blue to Steel Blue              | selected
-                ['#3a1c71', '#d76d77'], // Dark Purple to Pink                  | selected
-                ['#000428', '#004e92'], // Midnight Blue to Deep Sky Blue       | selected 
-                ['#1a2a6c', '#b21f1f'], // Deep Indigo to Dark Red              | selected 
+                ['#0f0c29', '#302b63'], // Deep Blue to Purple
+                ['#1e3c72', '#2a5298'], // Navy Blue to Steel Blue
+                ['#3a1c71', '#d76d77'], // Dark Purple to Pink
+                ['#000428', '#004e92'], // Midnight Blue to Deep Sky Blue
+                ['#1a2a6c', '#b21f1f'], // Deep Indigo to Dark Red
                 ['#232526', '#414345'], // Obsidian Black to Dark Gold
                 ['#141E30', '#243B55'], // Charcoal Grey to Electric Blue
                 ['#200122', '#6f0000'], // Deep Violet to Blood Red
@@ -29,25 +49,19 @@ const ServiceCard = () => {
                 ['#1F1C2C', '#928DAB'], // Gunmetal Grey to Electric Purple
                 ['#2C3E50', '#FD746C'], // Twilight Blue to Magenta
                 ['#434343', '#1c92d2']  // Graphite Black to Royal Blue
-                // ['#09203f', '#537895'], // Deep Teal to Dark Cyan
-                // ['#232526', '#414345'], // Dark Gray to Charcoal
-                // ['#16222a', '#3a6073'], // Deep Teal to Steel Blue
-                // ['#1c1c1c', '#4b4b4b'], // Almost Black to Dark Gray
-                // ['#1f1c2c', '#928dab'], // Midnight Purple to Muted Lavender
-                // ['#141e30', '#243b55'], // Navy to Gunmetal
             ];
-            const count = ServiceData.services.length;
+            const count = services.length;
             let gradients;
             if (count <= colors.length) {
                 // Shuffle colors array uniquely
                 const shuffledColors = [...colors].sort(() => Math.random() - 0.5);
-                gradients = ServiceData.services.map((_, index) => {
+                gradients = services.map((_, index) => {
                     const c = shuffledColors[index];
                     return `linear-gradient(135deg, ${c[0]}, ${c[1]})`;
                 });
             } else {
                 // Fallback if more services than colors
-                gradients = ServiceData.services.map(() => {
+                gradients = services.map(() => {
                     const randomIndex = Math.floor(Math.random() * colors.length);
                     const c = colors[randomIndex];
                     return `linear-gradient(135deg, ${c[0]}, ${c[1]})`;
@@ -57,7 +71,7 @@ const ServiceCard = () => {
         };
 
         generateGradients();
-    }, []);
+    }, [services]);
 
     // Initialize card order once services are loaded
     useEffect(() => {

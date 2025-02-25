@@ -5,6 +5,7 @@ import SendScraper from './components/SendScraper';
 import Home from './pages/Home';
 import ServicesPage from './pages/Services';
 import SettingsPage from './pages/Settings';
+import ReportsPage from './pages/Reports';
 
 function App() {
     return (
@@ -14,8 +15,9 @@ function App() {
                 <div className="main-content">
                     <div className="container py-4">
                         <Routes>
-                            <Route path="/add-job" element={<SendScraper />} />
+                            <Route path="/services" element={<ServicesPage />} />
                             <Route path="/settings" element={<SettingsPage />} />
+                            <Route path="/reports" element={<ReportsPage/>}/>
                             <Route path="/" element={<Home />} />
                         </Routes>
                     </div>

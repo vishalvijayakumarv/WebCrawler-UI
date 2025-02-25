@@ -2,16 +2,32 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFeather, faBell, faSignOutAlt, faHome, faConciergeBell, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faFeather, faBell, faSignOutAlt, faHome, faConciergeBell, faCog, faSquarePollVertical,faSitemap} from '@fortawesome/free-solid-svg-icons';
+import { faServicestack } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
-import notificationsData from '../data/notifications.json'; // Import notifications
+import { API_ENDPOINTS } from '../utils/api';
 
 const NavigationBar = () => {
-    
     const [isDarkTheme, setIsDarkTheme] = useState(false);
     const [notifications, setNotifications] = useState([]);
     const [showNotifications, setShowNotifications] = useState(false);
     const [unreadCount, setUnreadCount] = useState(0);
+
+    const fetchNotifications = async () => {
+        try {
+            // const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/notification`);
+            const response = await fetch(API_ENDPOINTS.NOTIFICATION);
+            if (!response.ok) {
+                throw new Error('Failed to fetch notifications');
+            }
+            const data = await response.json();
+            setNotifications(data.notifications || []); // Ensure notifications is an array
+            setUnreadCount(data.notifications.length); // Set initial unread count
+        } catch (error) {
+            console.error('Error fetching notifications:', error);
+            setNotifications([]); // Set notifications to an empty array on error
+        }
+    };
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme');
@@ -19,9 +35,7 @@ const NavigationBar = () => {
             setIsDarkTheme(savedTheme === 'dark');
             document.body.classList.toggle('dark-theme', savedTheme === 'dark');
         }
-        // Load notifications from JSON
-        setNotifications(notificationsData.notifications);
-        setUnreadCount(notificationsData.notifications.length); // Set initial unread count
+        fetchNotifications(); // Fetch notifications on component mount
     }, []);
 
     const toggleTheme = () => {
@@ -61,9 +75,13 @@ const NavigationBar = () => {
                         <FontAwesomeIcon icon={faHome} className="me-2" />
                         Home
                     </Link>
-                    <Link to="/add-job" className="nav-link">
-                        <FontAwesomeIcon icon={faConciergeBell} className="me-2" />
-                        Add Job
+                    <Link to="/services" className="nav-link">
+                        <FontAwesomeIcon icon={faSitemap} className="me-2" />
+                        Serivces
+                    </Link>
+                    <Link to="/reports" className="nav-link">
+                        <FontAwesomeIcon icon={faSquarePollVertical} className="me-2" />
+                        Reports
                     </Link>
                     <Link to="/settings" className="nav-link">
                         <FontAwesomeIcon icon={faCog} className="me-2" />
