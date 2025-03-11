@@ -21,8 +21,8 @@ const LiveLogs = ({ stream, onBackClick }) => {
 
                 eventSourceRef.current.onmessage = (event) => {
                     setLogs((prevLogs) => {
-                        const newLogs = [...prevLogs, event.data];
-                        return newLogs.length > 20 ? newLogs.slice(-20) : newLogs;
+                        const newLogs = [event.data, ...prevLogs];
+                        return newLogs.length > 20 ? newLogs.slice(0, 20) : newLogs;
                     });
                 };
 
@@ -55,14 +55,14 @@ const LiveLogs = ({ stream, onBackClick }) => {
                         console.log("Back button clicked");
                         onBackClick();
                     }}
-                    className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-1 rounded"
+                    className="view-logs-button"
                 >
                     Back
                 </button>
             </div>
     
             {/* Scrollable Log Box */}
-            <div className="logs-box h-100 overflow-y-auto bg-black text-green-400 p-3 rounded-lg border border-gray-700">
+            <div className="logs-box overflow-y-auto bg-black text-green-400 p-3 rounded-lg border border-gray-700">
                 {logs.length === 0 ? (
                     <p className="text-gray-400">Waiting for logs...</p>
                 ) : (

@@ -30,8 +30,8 @@ const LogStreams = ({ onSelectStream }) => {
     if (error) return <p className="text-red-500">Error: {error}</p>;
 
     return (
-        <div className="bg-white shadow-md rounded-lg p-4 border border-blue-500">
-            <h2 className="text-lg font-semibold mb-2">Available Log Streams</h2>
+        <div className="shadow-md rounded-lg p-4 border border-blue-500">
+            {/* <h2 className="text-lg font-semibold mb-2">Available Log Streams</h2> */}
             <table className="border-collapse border border-blue-300">
                 <thead className="bg-gray-100">
                     <tr>
@@ -52,7 +52,7 @@ const LogStreams = ({ onSelectStream }) => {
                                 <td className="p-2">{stream}</td>
                                 <td className="p-2 text-center">
                                     <button
-                                        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded"
+                                        className="view-logs-button"
                                         onClick={() => {
                                             console.log("Selected Stream:", stream);
                                             onSelectStream(stream);

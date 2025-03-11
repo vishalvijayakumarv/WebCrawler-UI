@@ -24,3 +24,17 @@
 .log-stream-item:hover {
     background-color: #374151; /* Matches `hover:bg-gray-600` */
 }
+
+.view-logs-button {
+    background-color: var(--button-bg-color);
+    color: var(--text-color);
+    border: none;
+    padding: -8px 0px;
+    border-radius: 31px;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-top: -73px;
+    margin-bottom: -91px;
+    height: 32px;
+    width: 123px;
+}

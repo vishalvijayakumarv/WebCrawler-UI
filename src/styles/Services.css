@@ -32,8 +32,9 @@
 .logs-container {
     height: 100%; /* Ensure the logs container takes full height */
     display: flex;
-    flex-direction: column-reverse; /* New logs appear at the top */
+    flex-direction: column; /* New logs appear at the top */
     overflow-y: auto; /* Enable scrolling for older logs */
+    justify-content: flex-end; /* Align logs to the bottom */
 }
 
 .logs-box {
