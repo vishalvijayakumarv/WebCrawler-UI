@@ -1,0 +1,42 @@
+.services-page {
+    padding: 20px;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.services-container {
+    display: flex;
+    gap: 20px;
+}
+
+.log-streams-section, .live-logs-section {
+    flex: 1;
+    max-height: 1000px;
+    overflow-y: auto;
+    background-color: var(--bg-color);
+    border: 2px solid var(--highlight-colour);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 700px; /* Fixed height for both sections */
+}
+
+.empty-logs-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.logs-container {
+    height: 100%; /* Ensure the logs container takes full height */
+    display: flex;
+    flex-direction: column-reverse; /* New logs appear at the top */
+    overflow-y: auto; /* Enable scrolling for older logs */
+}
+
+.logs-box {
+    height: 100%; /* Ensure the logs box takes full height */
+    overflow-y: auto; /* Enable scrolling for older logs */
+}

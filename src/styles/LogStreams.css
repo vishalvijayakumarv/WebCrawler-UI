@@ -1,0 +1,26 @@
+.log-streams-container {
+    background-color: var(--bg-color); /* Matches `bg-white` */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Matches `shadow-md` */
+    border-radius: 8px; /* Matches `rounded-lg` */
+    padding: 16px; /* Matches `p-4` */
+}
+
+.log-streams-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.log-stream-item {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: var(--bg-color) !important; /* From JSX */
+    border: 1px solid var(--bg-color) !important;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: var(--bg-color);
+}
+
+.log-stream-item:hover {
+    background-color: #374151; /* Matches `hover:bg-gray-600` */
+}

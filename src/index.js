@@ -8,6 +8,9 @@ import './styles/Navbar.css';
 import './styles/SendScraper.css';
 import './styles/ServiceCard.css';
 import './styles/WorkersChart.css';
+import './styles/LogStreams.css';
+import './styles/LiveLogs.css';
+import './styles/Services.css'; // Add this line
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

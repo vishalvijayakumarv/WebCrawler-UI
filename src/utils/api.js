@@ -1,4 +1,3 @@
-
 const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
 
 export const API_ENDPOINTS = {
@@ -7,4 +6,6 @@ export const API_ENDPOINTS = {
   NOTIFICATION: `${API_BASE_URL}/api/notification`,
   SEND_SCRAPER: `${API_BASE_URL}/api/send-scraper`,
   START_CONTAINER: `${API_BASE_URL}/api/start-container`,
+  LIST_LOG_STREAMS: `${API_BASE_URL}/api/log-streams`,
+  STREAM_LOGS: `${API_BASE_URL}/api/live-log`,
 };

@@ -1,0 +1,19 @@
+.logs-container {
+    height: 320px; /* Matches `h-80` */
+    overflow-y: auto;
+    background-color: var(--bg-color) !important; /* From JSX inline style */
+    color: #22c55e; /* text-green-400 */
+    padding: 12px; /* Matches `p-3` */
+    border-radius: 8px; /* Matches `rounded-lg` */
+    border: 1px solid #374151; /* border-gray-700 */
+}
+
+.log-entry {
+    white-space: pre-wrap;
+    font-size: 14px; /* Matches `text-sm` */
+}
+
+.empty-message {
+    color: #9ca3af; /* text-gray-400 */
+    text-align: center;
+}
