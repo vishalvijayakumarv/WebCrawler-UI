@@ -30,9 +30,9 @@ const LogStreams = ({ onSelectStream }) => {
     if (error) return <p className="text-red-500">Error: {error}</p>;
 
     return (
-        <div className="shadow-md rounded-lg p-4 border border-blue-500">
+        <div className="shadow-md rounded-lg p-4 border border-black-500">
             {/* <h2 className="text-lg font-semibold mb-2">Available Log Streams</h2> */}
-            <table className="border-collapse border border-blue-300">
+            <table className="border-collapse border border-black-300">
                 <thead className="bg-gray-100">
                     <tr>
                         <th className="border p-2 text-left">Log Stream Name</th>
@@ -42,7 +42,7 @@ const LogStreams = ({ onSelectStream }) => {
                 <tbody>
                     {streams.length === 0 ? (
                         <tr>
-                            <td colSpan="2" className="text-center p-4 text-blue-500">
+                            <td colSpan="2" className="text-center p-4 text-black-500">
                                 No log streams available
                             </td>
                         </tr>
