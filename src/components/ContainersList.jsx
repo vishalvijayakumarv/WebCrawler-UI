@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../styles/ContainersList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faStop, faPause } from '@fortawesome/free-solid-svg-icons'; // Import icons
+import { faPlay, faTrash, faPause } from '@fortawesome/free-solid-svg-icons'; // Import icons
 import { faDocker } from '@fortawesome/free-brands-svg-icons'; // Import faDocker from brands
 import { API_ENDPOINTS } from "../utils/api";
 
@@ -83,7 +83,7 @@ const ContainersList = () => {
             case 'start':
                 endpoint = API_ENDPOINTS.START_CONTAINER;
                 break;
-            case 'stop':
+            case 'remove':
                 endpoint = API_ENDPOINTS.STOP_CONTAINER;
                 break;
             case 'pause':
@@ -164,15 +164,31 @@ const ContainersList = () => {
                             <small className="text-muted">Image: {container.image}</small>
                         </div>
                         <div className="container-actions">
-                            <button onClick={() => handleAction('start', container.name)} className="action-button">
-                                <FontAwesomeIcon icon={faPlay} />
-                            </button>
-                            <button onClick={() => handleAction('stop', container.name)} className="action-button">
-                                <FontAwesomeIcon icon={faStop} />
-                            </button>
-                            <button onClick={() => handleAction('pause', container.name)} className="action-button">
-                                <FontAwesomeIcon icon={faPause} />
-                            </button>
+                            {container.status === 'Running' && (
+                                <>
+                                    <button onClick={() => handleAction('pause', container.name)} className="action-button">
+                                        <FontAwesomeIcon icon={faPause} />
+                                    </button>
+                                    <button onClick={() => handleAction('remove', container.name)} className="action-button">
+                                        <FontAwesomeIcon icon={faTrash} />
+                                    </button>
+                                </>
+                            )}
+                            {container.status === 'Paused' && (
+                                <>
+                                    <button onClick={() => handleAction('start', container.name)} className="action-button">
+                                        <FontAwesomeIcon icon={faPlay} />
+                                    </button>
+                                    <button onClick={() => handleAction('remove', container.name)} className="action-button">
+                                        <FontAwesomeIcon icon={faTrash} />
+                                    </button>
+                                </>
+                            )}
+                            {container.status === 'Exited' && (
+                                <button onClick={() => handleAction('remove', container.name)} className="action-button">
+                                    <FontAwesomeIcon icon={faTrash} />
+                                </button>
+                            )}
                         </div>
                     </div>
                 ))}
