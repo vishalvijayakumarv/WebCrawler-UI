@@ -6,6 +6,8 @@ export const API_ENDPOINTS = {
   NOTIFICATION: `${API_BASE_URL}/api/notification`,
   SEND_SCRAPER: `${API_BASE_URL}/api/send-scraper`,
   START_CONTAINER: `${API_BASE_URL}/api/start-container`,
+  STOP_CONTAINER: `${API_BASE_URL}/api/stop-container`, // Add stop endpoint
+  PAUSE_CONTAINER: `${API_BASE_URL}/api/pause-container`, // Add pause endpoint
   LIST_LOG_STREAMS: `${API_BASE_URL}/api/log-streams`,
   STREAM_LOGS: `${API_BASE_URL}/api/live-log`,
 };

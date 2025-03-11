@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../styles/ContainersList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDocker } from '@fortawesome/free-brands-svg-icons';
+import { faPlay, faStop, faPause } from '@fortawesome/free-solid-svg-icons'; // Import icons
+import { faDocker } from '@fortawesome/free-brands-svg-icons'; // Import faDocker from brands
 import { API_ENDPOINTS } from "../utils/api";
 
 const ContainersList = () => {
@@ -76,6 +77,41 @@ const ContainersList = () => {
         }
     };
 
+    const handleAction = async (action, jobName) => {
+        let endpoint;
+        switch (action) {
+            case 'start':
+                endpoint = API_ENDPOINTS.START_CONTAINER;
+                break;
+            case 'stop':
+                endpoint = API_ENDPOINTS.STOP_CONTAINER;
+                break;
+            case 'pause':
+                endpoint = API_ENDPOINTS.PAUSE_CONTAINER;
+                break;
+            default:
+                return;
+        }
+
+        try {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ job_name: jobName }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`Failed to ${action} container`);
+            }
+
+            const data = await response.json();
+            alert(`Success: ${data.message}`);
+        } catch (error) {
+            console.error(`Error ${action}ing container:`, error);
+            alert(`Error ${action}ing container`);
+        }
+    };
+
     return (
         <div className="rounded-3 p-4 mb-4 containersWrapper">
             <div className="d-flex justify-content-between align-items-center mb-4 containersHeader">
@@ -126,6 +162,17 @@ const ContainersList = () => {
                             <div className="transaction-amount positive">CPU: {container.cpu_usage}</div>
                             <div className="transaction-amount positive">Memory: {container.mem_usage}</div>
                             <small className="text-muted">Image: {container.image}</small>
+                        </div>
+                        <div className="container-actions">
+                            <button onClick={() => handleAction('start', container.name)} className="action-button">
+                                <FontAwesomeIcon icon={faPlay} />
+                            </button>
+                            <button onClick={() => handleAction('stop', container.name)} className="action-button">
+                                <FontAwesomeIcon icon={faStop} />
+                            </button>
+                            <button onClick={() => handleAction('pause', container.name)} className="action-button">
+                                <FontAwesomeIcon icon={faPause} />
+                            </button>
                         </div>
                     </div>
                 ))}
