@@ -69,8 +69,8 @@ const ContainersList = () => {
         switch (activeTab) {
             case 'running':
                 return `Running (${filteredContainers.length})`;
-            case 'completed':
-                return `Completed (${filteredContainers.length})`;
+            case 'paused':
+                return `paused (${filteredContainers.length})`;
             default:
                 return `All containers (${filteredContainers.length})`;
         }
@@ -99,7 +99,7 @@ const ContainersList = () => {
                     <a className={`nav-link ${activeTab === 'running' ? 'active' : ''}`} href="#" onClick={() => setActiveTab('running')}>Running</a>
                 </li>
                 <li className="nav-item">
-                    <a className={`nav-link ${activeTab === 'completed' ? 'active' : ''}`} href="#" onClick={() => setActiveTab('completed')}>Completed</a>
+                    <a className={`nav-link ${activeTab === 'paused' ? 'active' : ''}`} href="#" onClick={() => setActiveTab('paused')}>Paused</a>
                 </li>
             </ul>
 

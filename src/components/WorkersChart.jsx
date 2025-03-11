@@ -33,7 +33,7 @@ const WorkersChart = () => {
   }, []);
 
   const runningCount = containers.filter(container => container.status === 'Running').length;
-  const completedCount = containers.filter(container => container.status === 'Completed').length;
+  const pausedCount = containers.filter(container => container.status === 'Paused').length;
   const exitedCount = containers.filter(container => container.status === 'Exited').length;
 
   useEffect(() => {
@@ -46,10 +46,10 @@ const WorkersChart = () => {
     chartInstanceRef.current = new Chart(ctx, {
       type: 'doughnut',
       data: {
-        labels: ['Running', 'Completed', 'Exited'],
+        labels: ['Running', 'Paused', 'Exited'],
         datasets: [
           {
-            data: [runningCount, completedCount, exitedCount],
+            data: [runningCount, pausedCount, exitedCount],
             backgroundColor: ['#36A2EB', '#2ecc71', '#e74c3c'],
           },
         ],
@@ -65,7 +65,7 @@ const WorkersChart = () => {
         chartInstanceRef.current.destroy();
       }
     };
-  }, [runningCount, completedCount, exitedCount]);
+  }, [runningCount, pausedCount, exitedCount]);
 
   return (
     <div className="workers-chart">
@@ -80,7 +80,7 @@ const WorkersChart = () => {
         </div>
         <div className="legend-item">
           {/* <div className="legend-color" style={{ backgroundColor: '#2ecc71' }}></div> */}
-          {/* Completed */}
+          {/* Paused */}
         </div>
         <div className="legend-item">
           {/* <div className="legend-color" style={{ backgroundColor: '#e74c3c' }}></div> */}
